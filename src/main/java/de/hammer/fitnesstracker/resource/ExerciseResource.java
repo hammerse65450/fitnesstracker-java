@@ -19,7 +19,7 @@ public class ExerciseResource {
     }
 
     @GetMapping("/all")
-    public ResponseEntity<List<Exercise>> getAllExercises(){
+    public ResponseEntity<List<Exercise>> getAllExercises() {
 
         List<Exercise> exercises = exerciseService.findAllExercise();
 
@@ -27,7 +27,7 @@ public class ExerciseResource {
     }
 
     @GetMapping("/find/{id}")
-    public ResponseEntity<Exercise> getAllExercises(@PathVariable("id") Long id){
+    public ResponseEntity<Exercise> getAllExercises(@PathVariable("id") Long id) {
 
         Exercise exercise = exerciseService.findExerciseById(id);
 
@@ -35,7 +35,7 @@ public class ExerciseResource {
     }
 
     @PostMapping("/add")
-    public ResponseEntity<Exercise> addExercise(@RequestBody Exercise exercise){
+    public ResponseEntity<Exercise> addExercise(@RequestBody Exercise exercise) {
 
         Exercise newExercise = exerciseService.addExercise(exercise);
 
@@ -43,15 +43,16 @@ public class ExerciseResource {
     }
 
     @PutMapping("/update")
-    public ResponseEntity<Exercise> updateExercise(@RequestBody Exercise exercise){
+    public ResponseEntity<Exercise> updateExercise(@RequestBody Exercise exercise) {
 
         Exercise updatedExercise = exerciseService.updateExercise(exercise);
 
         return new ResponseEntity<>(updatedExercise, HttpStatus.OK);
     }
 
-    @PutMapping("/delete/{id}")
-    public ResponseEntity<?> deleteExercise(@PathVariable("id") Long id){
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<?> deleteExercise(@PathVariable("id") Long id) {
 
         exerciseService.deleteExercise(id);
 
