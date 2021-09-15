@@ -27,7 +27,7 @@ public class ExerciseResource {
     }
 
     @GetMapping("/find/{id}")
-    public ResponseEntity<Exercise> getAllExercises(@PathVariable("id") Long id) {
+    public ResponseEntity<Exercise> getExerciseById(@PathVariable("id") Long id) {
 
         Exercise exercise = exerciseService.findExerciseById(id);
 
